@@ -1,5 +1,5 @@
 import express from "express";
-import todoRoutes from "./routes/todo.routes";
+import bookRoutes from "./routes/book.routes";
 
 class App {
   app: express.Application;
@@ -18,9 +18,9 @@ class App {
 
   private initializeRoutes(): void {
     this.app.get("/", (req, res) => {
-      res.send("Todo API is running");
+      res.send("Book API is running");
     });
-    this.app.use("/api/todos", todoRoutes);
+    this.app.use("/api/books", bookRoutes);
   }
 
   startServer(): void {
